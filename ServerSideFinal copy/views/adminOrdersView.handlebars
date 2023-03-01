@@ -1,0 +1,21 @@
+<table class="table">
+    <tr>
+        <th>Order Number</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Time</th>
+    </tr>
+    {{#each orders }}
+        <tr>
+            <td>{{this.orderNumber}}</td>
+            <td>dummy value</td>
+            <td>{{this.total}}</td>
+            <td>dummy value</td>
+            <td><button class="btn btn-success">Order Completed</button></td>
+            <td><button class="btn btn-danger">Cancel Order</button></td>
+        </tr>
+    {{/each}}
+
+</table>
+
+

@@ -1,0 +1,28 @@
+<form method="post" action="/admin/menu/add">
+
+    <label for="">Dish Name:</label>
+    <input type="text" name="name">
+
+    <label for="">Description:</label>
+    <input type="text" name="description">
+
+    <label for="">Display the dish?</label>
+    <select name="display" id="display">
+
+        <option value="true">Yes</option>
+        <option selected value="false">No</option>
+
+    </select>
+
+    <label for="">Price:</label>
+    <input type="number"  step=.01 name="price">
+
+    <label for="">Stock</label>
+    <input type="number" name="stock">
+
+
+    <input type="submit" value="Add to Menu">
+    <button><a href="/admin/menu">Cancel</a></button>
+
+
+</form>

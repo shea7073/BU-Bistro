@@ -1,0 +1,30 @@
+<center><h1>Receipt for Order #{{ order.orderNumber }}</h1></center>
+
+<table class="table">
+    <tr>
+        <th>Dish</th>
+        <th>Servings</th>
+        <th>Price per Serving</th>
+        <th>Total</th>
+    </tr>
+
+    {{#each order.dishes }}
+
+        <tr>
+            <td>{{ this.dishName }}</td>
+            <td>{{ this.count }}</td>
+            <td>{{ this.price }}</td>
+            <td>${{ multiply this.count  this.price }}</td>
+        </tr>
+
+    {{/each}}
+
+</table>
+
+<h3>Order total: {{ order.total }}</h3>
+
+<center><h4>This order is currently <span class="text-success">in process</span>. If you no longer need this order you may cancel</h4></center>
+<form method="post" action="/order/user/cancel">
+    <center><button type="submit">Cancel my Order</button></center>
+    <input type="hidden" name="orderNumber" value="{{ order.orderNumber }}">
+</form>

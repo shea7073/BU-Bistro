@@ -1,0 +1,25 @@
+<center><h1>Are you sure you would like to delete {{{ data.dishName }}}?</h1></center>
+
+<center><h3>Current Values</h3></center>
+
+<form method="post" action="/admin/menu/delete">
+    <center><p><strong>ID:</strong> {{{ data.id }}}</p></center>
+    <input type="hidden" name="id" value="{{data.id}}">
+    <center><p><strong>Dish Name:</strong> {{{ data.dishName }}}</p></center>
+    <center><p><strong>Display Status:</strong> {{{ data.isDisplayed }}}</p></center>
+    <center><p><strong>Price:</strong> {{{ data.price }}}</p></center>
+    <center><p><strong>Current Stock:</strong> {{{ data.stock }}}</p></center>
+
+    <div style="display: flex; justify-content: center">
+        <input type="submit" value="Yes, Delete">
+        <button><a href="/admin/menu">Cancel</a></button>
+    </div>
+
+</form>
+
+<style>
+    p {
+        padding: .5rem;
+    }
+
+</style>

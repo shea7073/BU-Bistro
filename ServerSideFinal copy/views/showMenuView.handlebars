@@ -1,0 +1,28 @@
+<center><h1>Our Menu</h1></center>
+
+
+<center><table class="table">
+    <tr>
+        <th>Dish</th>
+        <th>Description</th>
+
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+    {{#unless displayedCount }}
+        <h1>We are currently out of food!</h1>
+    {{/unless}}
+    {{#each data }}
+        {{# if this.isDisplayed }}
+            <tr>
+                <td>{{ this.dishName }}</td>
+                <td>{{ this.description }}</td>
+                <td>{{ this.price }}</td>
+                <td>{{ this.stock }}</td>
+                <td><a class="btn btn-light" href="/add/{{ this.id }}">Add to order</a></td>
+            </tr>
+        {{/if}}
+
+
+{{/each}}
+</table></center>

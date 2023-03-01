@@ -1,0 +1,46 @@
+<h1>Your Current Order</h1>
+
+<hr>
+
+<table class="table">
+    <tr>
+        <th>Dish</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Servings</th>
+    </tr>
+{{#if empty}}
+    </table>
+    <center><h1>Nothing in your cart yet!</h1></center>
+    <center><h3>Current total: $0.00</h3></center>
+{{else}}
+
+    {{#each data }}
+            <form method='post' action="/">
+                <tr>
+                    <td>{{ this.dishName }}</td>
+                    <td>{{ this.description }}</td>
+                    <td>{{ this.price }}</td>
+                    <td><input name="count" type="number" value="{{ this.count }}"></td>
+                    <td><button class="btn btn-light" type="submit" formaction="cart/update/{{ this.id }}/update" value="update">Update</button></td>
+                    <td><button class="btn btn-danger" type="submit" formaction="cart/update/{{ this.id }}/remove" value="remove">Remove</button></td>
+                </tr>
+            </form>
+    {{/each}}
+
+    </table>
+
+    <h3>Current total: {{ price }}</h3>
+
+    {{#if data }}
+        <form method="post" action="/order">
+            <button type="submit">Place Order</button>
+        </form>
+    {{/if}}
+
+{{/if}}
+
+
+
+
+

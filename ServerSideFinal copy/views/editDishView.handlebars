@@ -1,0 +1,32 @@
+<form method="post" action="/admin/menu/edit" >
+
+    <input type="hidden" id="id" name='id' value="{{{ data.id }}}">
+    
+    <label for="">Dish Name:</label>
+    <input type="text" name="name" value="{{{ data.dishName }}}">
+
+    <label for="">Description:</label>
+    <input type="text" name="description" value="{{{ data.description }}}">
+
+    <label for="">Display the dish?</label>
+    <select name="display" id="display">
+        {{# if data.isDisplayed }}
+            <option selected value="true">Yes</option>
+            <option value="false">No</option>
+        {{ else }}
+            <option value="true">Yes</option>
+            <option selected value="false">No</option>
+        {{/if}}
+
+    </select>
+
+    <label for="">Price:</label>
+    <input type="number"  step=.01 name="price" value="{{{ data.price }}}">
+
+    <label for="">Stock</label>
+    <input type="number" name="stock" value="{{{ data.stock }}}">
+    
+    
+    <input type="submit" value="Confirm Edit">
+    <button><a href="/admin/menu">Cancel</a></button>
+</form>

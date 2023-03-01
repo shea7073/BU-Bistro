@@ -1,0 +1,10 @@
+<center><h1>Sorry but there were issues with your order!</h1></center>
+<hr>
+<p>The following items had quantity errors</p>
+{{#each data}}
+    <p>You selected: {{ this.requested }} orders of {{ this.dishName }}</p>
+    <p>Current stock of {{ this.dishName }}: {{ this.stock }}</p>
+    <hr>
+{{/each}}
+
+<center><a href="/cart">Back to Cart</a></center>

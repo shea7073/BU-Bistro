@@ -1,0 +1,26 @@
+<center><h1>Our Menu</h1></center>
+
+<center><button><a href="/admin/menu/add">Add to Menu</a></button></center>
+
+<center><table class="table">
+    <tr>
+        <th>Dish</th>
+        <th>Description</th>
+        <th>Displayed</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+
+    {{#each data }}
+        <tr>
+            <td>{{ this.dishName }}</td>
+            <td>{{ this.description }}</td>
+            <td>{{ this.isDisplayed }}</td>
+            <td>{{ this.price }}</td>
+            <td>{{ this.stock }}</td>
+            <td><button><a href="/admin/menu/edit/{{{ this.id }}}">Edit</a></button></td>
+            <td><button><a href="/admin/menu/delete/{{{ this.id }}}">Delete</a></button></td>
+        </tr>
+
+    {{/each}}
+</table></center>
